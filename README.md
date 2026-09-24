@@ -20,8 +20,8 @@ Push this repository to GitHub, then open **Settings → Pages**. Under **Build 
 
 ## Content to complete
 
-- Add verified email, Google Scholar, ORCID, and CV PDF details. These are shown as non-clickable placeholders in the current preview.
-- Replace the illustrative publication entries with verified citations and links.
+- Add email, Google Scholar, ORCID, and CV links when verified information is available.
+- Add a publications section only when verified citations and links are available.
 - The maps in `assets/visuals/` are decorative vector illustrations, not measured research results.
 
 The GitHub link points to the source repository. All page visuals and fonts are local assets; the page has no remote image or font dependency. Font license notices are in `assets/fonts/`.
