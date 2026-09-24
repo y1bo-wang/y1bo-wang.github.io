@@ -1,30 +1,31 @@
 (() => {
-  const button = document.querySelector('[data-share]');
-  const status = document.querySelector('.share-status');
-  if (!button || !status) return;
+  const urlInput = document.querySelector('#share-url');
+  const copyButton = document.querySelector('[data-copy-link]');
+  const nativeButton = document.querySelector('[data-share-native]');
+  const feedback = document.querySelector('.share-feedback');
+  if (!urlInput || !copyButton || !nativeButton || !feedback) return;
 
-  let timer;
-  const announce = (message) => {
-    status.textContent = message;
-    clearTimeout(timer);
-    timer = setTimeout(() => { status.textContent = ''; }, 3500);
+  const url = urlInput.value;
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      feedback.textContent = 'Link copied';
+    } catch {
+      urlInput.select();
+      feedback.textContent = 'Select and copy the address above';
+    }
   };
 
-  button.addEventListener('click', async () => {
-    const url = location.href.split('#')[0];
+  copyButton.addEventListener('click', copy);
+  nativeButton.addEventListener('click', async () => {
     if (navigator.share) {
       try {
-        await navigator.share({ title: document.title, url });
+        await navigator.share({ title: 'Yibo Wang | Researcher', url });
         return;
       } catch (error) {
         if (error.name === 'AbortError') return;
       }
     }
-    try {
-      await navigator.clipboard.writeText(url);
-      announce('Link copied');
-    } catch {
-      announce('Copy this link: ' + url);
-    }
+    await copy();
   });
 })();

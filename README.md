@@ -23,6 +23,7 @@ Push this repository to GitHub, then open **Settings → Pages**. Under **Build 
 - Add verified email, Google Scholar, and ORCID links. The labels are visible but inactive until those details are supplied.
 - Replace `assets/cv.pdf` with the completed CV. The current PDF is prominently marked as a placeholder.
 - Replace the clearly marked sample entries on `publications.html` with verified citations and links.
+- `research.html` presents the current research themes; `share.html` offers a copyable website link and device sharing.
 - The maps in `assets/visuals/` are decorative vector illustrations, not measured research results.
 
 The GitHub link points to the source repository. All page visuals and fonts are local assets; the page has no remote image or font dependency. Font license notices are in `assets/fonts/`.
