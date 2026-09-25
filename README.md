@@ -20,10 +20,11 @@ Push this repository to GitHub, then open **Settings → Pages**. Under **Build 
 
 ## Content to complete
 
-- Add verified email, Google Scholar, and ORCID links. The labels are visible but inactive until those details are supplied.
+- The email link is active (`y1bo_wang@163.com`). Add verified Google Scholar and ORCID links when available; their icons remain inactive.
 - Replace `assets/cv.pdf` with the completed CV. The current PDF is prominently marked as a placeholder.
 - Replace the clearly marked sample entries on `publications.html` with verified citations and links.
-- `research.html` presents the current research themes; `share.html` offers a copyable website link and device sharing.
+- `research.html` presents the current research themes; `share.html` is a planned home for shared data, methods, and research experience.
+- The homepage hero uses the supplied campus geothermal illustration with a lightweight SVG heat-flow overlay. Reduced-motion settings disable the animation.
 - The maps in `assets/visuals/` are decorative vector illustrations, not measured research results.
 
 The GitHub link points to the source repository. All page visuals and fonts are local assets; the page has no remote image or font dependency. Font license notices are in `assets/fonts/`.
