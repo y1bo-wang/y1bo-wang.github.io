@@ -38,17 +38,23 @@
     .hero-visual { position:relative; width:100%; height:455px; overflow:hidden; }
     .hero-art { width:100%; height:100%; display:block; object-fit:cover; object-position:right center; }
     .hero-flow { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
-    .heat-flow { fill:none; stroke:#d96937; stroke-width:4; stroke-linecap:round; stroke-dasharray:3 19; opacity:.7; animation:heat-travel 3.1s linear infinite; }
+    .heat-flow { fill:none; stroke:#e96932; stroke-width:9; stroke-linecap:round; stroke-dasharray:12 22; opacity:.88; filter:drop-shadow(0 0 6px #e96932); animation:heat-travel 1.8s linear infinite; }
     .heat-flow:nth-child(2) { animation-delay:-.7s; }
     .heat-flow:nth-child(3) { animation-delay:-1.4s; }
     .heat-flow:nth-child(4) { animation-delay:-2.1s; }
-    .heat-pulse { fill:#ea875b; opacity:.12; transform-box:fill-box; transform-origin:center; animation:heat-pulse 4s ease-in-out infinite; }
+    .heat-pulse { fill:#ed7b43; opacity:.18; transform-box:fill-box; transform-origin:center; animation:heat-pulse 3s ease-in-out infinite; }
     .heat-pulse:nth-child(6) { animation-delay:-1s; }
     .heat-pulse:nth-child(7) { animation-delay:-2s; }
     .heat-pulse:nth-child(8) { animation-delay:-3s; }
-    @keyframes heat-travel { to { stroke-dashoffset:-22; } }
-    @keyframes heat-pulse { 50% { opacity:.28; transform:scale(1.12); } }
+    @keyframes heat-travel { to { stroke-dashoffset:-34; } }
+    @keyframes heat-pulse { 50% { opacity:.42; transform:scale(1.35); } }
     @media (prefers-reduced-motion:reduce) { .heat-flow,.heat-pulse { animation:none; } }
+    .hero-visual.motion-enabled .heat-flow { animation:heat-travel 1.8s linear infinite; }
+    .hero-visual.motion-enabled .heat-pulse { animation:heat-pulse 3s ease-in-out infinite; }
+    .hero-visual.motion-paused .heat-flow,.hero-visual.motion-paused .heat-pulse { animation:none; }
+    .motion-toggle { position:absolute; right:14px; top:14px; z-index:2; border:1px solid #cbd6de; border-radius:999px; padding:8px 12px; background:#ffffffeb; color:#304d6c; font-size:12px; cursor:pointer; box-shadow:0 2px 10px #24374a17; }
+    .motion-toggle:hover { border-color:#829bb0; }
+    .motion-toggle[hidden] { display:none; }
     .research { padding:36px 0 47px; border-bottom:1px solid var(--line); }
     .section-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:27px; }
     .section-title { margin:0; }
@@ -129,11 +135,12 @@
             <a href="https://github.com/y1bo-wang" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 20c-4 1-4-2-6-3m12 4v-3c0-1 0-2-1-3 4 0 7-2 7-6 0-1 0-2-1-3 0-1 0-2 0-3-2 0-3 1-4 2-3-1-5-1-8 0-1-1-2-2-4-2 0 1 0 2 0 3v3"/></svg>GitHub</a>
           </div>
         </div>
-        <div class="hero-visual" role="img" aria-label="Illustration of campus buildings and geothermal boreholes, with gently animated heat flow">
-          <img class="hero-art" src="assets/visuals/hero-thermal.png" alt="" fetchpriority="high">
+        <div class="hero-visual" role="group" aria-label="Geothermal illustration and animation control">
+          <img class="hero-art" src="assets/visuals/hero-thermal.png" alt="Campus buildings above geothermal boreholes and underground heat zones" fetchpriority="high">
+          <button class="motion-toggle" type="button" aria-pressed="false" hidden>Play animation</button>
           <svg class="hero-flow" viewBox="0 0 1672 941" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
             <path class="heat-flow" d="M865 423V678"/><path class="heat-flow" d="M1054 422V705"/><path class="heat-flow" d="M1236 421V702"/><path class="heat-flow" d="M1415 423V673"/>
-            <circle class="heat-pulse" cx="865" cy="677" r="39"/><circle class="heat-pulse" cx="1054" cy="705" r="39"/><circle class="heat-pulse" cx="1236" cy="702" r="39"/><circle class="heat-pulse" cx="1415" cy="673" r="39"/>
+            <circle class="heat-pulse" cx="865" cy="677" r="72"/><circle class="heat-pulse" cx="1054" cy="705" r="72"/><circle class="heat-pulse" cx="1236" cy="702" r="72"/><circle class="heat-pulse" cx="1415" cy="673" r="72"/>
           </svg>
         </div>
       </div>
@@ -169,5 +176,6 @@
     </section>
   </main>
   <footer class="site-footer" id="contact"><div class="container footer-inner"><span>Yibo Wang <span class="footer-rule"></span></span><nav class="footer-links" aria-label="Contact and profiles"><a href="mailto:y1bo_wang@163.com" aria-label="Email Yibo Wang" title="Email: y1bo_wang@163.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="1"/><path d="m3 6 9 7 9-7"/></svg></a><span class="link-unavailable" role="img" aria-label="Google Scholar link to be added" title="Google Scholar link to be added"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9 12 4l10 5-10 5L2 9Z M5 12v5c3 3 11 3 14 0v-5 M22 9v8"/></svg></span><span class="link-unavailable" role="img" aria-label="ORCID link to be added" title="ORCID link to be added"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#111923" stroke="none"/><text x="12" y="16" text-anchor="middle" font-size="9" fill="#fff" stroke="none" font-family="Arial">iD</text></svg></span><a href="https://github.com/y1bo-wang" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 20c-4 1-4-2-6-3m12 4v-3c0-1 0-2-1-3 4 0 7-2 7-6 0-1 0-2-1-3 0-1 0-2 0-3-2 0-3 1-4 2-3-1-5-1-8 0-1-1-2-2-4-2 0 1 0 2 0 3v3"/></svg></a></nav></div></footer>
+  <script src="assets/hero-motion.js" defer></script>
 </body>
 </html>
